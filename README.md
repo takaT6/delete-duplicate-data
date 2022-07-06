@@ -1,8 +1,8 @@
 重複データの全削除SQL文
 
-よく忘れるのでメモ
+よく忘れるのでメモ(SQLite3)
 
-(SQLite)
+```bash
 DELETE FROM 
 WHERE (rowid) NOT IN
 (
@@ -12,5 +12,6 @@ WHERE (rowid) NOT IN
     GROUP BY id, ....
    )
 );
+```
 
-rowid以外で重複しているデータを削除している
+指定したキーでグループ化し、それらのrowidたち以外に該当するデータを削除している
